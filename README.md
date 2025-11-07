@@ -1,2 +1,2 @@
-# photography-website-
+# photography-website
 Portfolio 
