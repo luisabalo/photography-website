@@ -1,24 +1,120 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luis' Portfolio</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      color: #333;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Luis Abalo — Wedding Photographer for intimate celebrations worldwide." />
+  <title>Luis Abalo Photography</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preload hero images for smoother first paint -->
+  <link rel="preload" as="image" href="assets/hero/hero-1.jpg" />
+  <link rel="preload" as="image" href="assets/hero/hero-2.jpg" />
+  <link rel="preload" as="image" href="assets/hero/hero-3.jpg" />
 </head>
+
 <body>
-  <h1>This is Luis' portfolio! / Bienvenido a mi portfolio! 📸 </h1>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="brand__name">Luis Abalo</span>
+      <span class="brand__sub">Photography</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__link" href="weddings.html">Weddings</a>
+      <a class="nav__link" href="portfolio.html">Portfolio</a>
+      <a class="nav__link" href="about.html">About</a>
+      <a class="nav__link nav__link--cta" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Hero">
+      <div class="hero__media" aria-hidden="true">
+        <!-- Crossfade layers (no <img> to keep layout stable and avoid CLS) -->
+        <div class="hero__layer hero__layer--active" style="background-image:url('assets/hero/hero-1.jpg')"></div>
+        <div class="hero__layer" style="background-image:url('assets/hero/hero-2.jpg')"></div>
+        <div class="hero__layer" style="background-image:url('assets/hero/hero-3.jpg')"></div>
+
+        <!-- Gentle vignette for readability -->
+        <div class="hero__scrim"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__kicker">Wedding Photographer</p>
+        <h1 class="hero__headline">for intimate celebrations worldwide</h1>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="weddings.html">View Weddings</a>
+          <a class="btn btn--ghost" href="portfolio.html">View Portfolio</a>
+        </div>
+
+        <p class="hero__note">
+          Available worldwide · Documentary approach · Cinematic light
+        </p>
+      </div>
+    </section>
+
+    <section class="home-sections" aria-label="Explore">
+      <a class="tile" href="weddings.html">
+        <div class="tile__meta">
+          <h2 class="tile__title">Weddings</h2>
+          <p class="tile__desc">Emotional storytelling, calm presence, honest moments.</p>
+        </div>
+        <span class="tile__arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="tile" href="portfolio.html">
+        <div class="tile__meta">
+          <h2 class="tile__title">Portfolio</h2>
+          <p class="tile__desc">Aerial, portraits, landscapes & personal work.</p>
+        </div>
+        <span class="tile__arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer__left">
+      <span>© <span id="year"></span> Luis Abalo Photography</span>
+      <span class="dot" aria-hidden="true">·</span>
+      <span>All rights reserved</span>
+    </div>
+
+    <div class="footer__right">
+      <a class="footer__link" href="https://instagram.com/YOUR_INSTAGRAM" target="_blank" rel="noopener noreferrer">
+        Instagram
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // ====== Hero crossfade (lightweight) ======
+    (function () {
+      const layers = Array.from(document.querySelectorAll(".hero__layer"));
+      if (layers.length <= 1) return;
+
+      // Prefer reduced motion
+      const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce) return;
+
+      let i = 0;
+      const intervalMs = 5000; // time each image stays visible
+      const fadeClass = "hero__layer--active";
+
+      // Ensure only first is active on load
+      layers.forEach((el, idx) => el.classList.toggle(fadeClass, idx === 0));
+
+      setInterval(() => {
+        layers[i].classList.remove(fadeClass);
+        i = (i + 1) % layers.length;
+        layers[i].classList.add(fadeClass);
+      }, intervalMs);
+    })();
+
+    // Current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
