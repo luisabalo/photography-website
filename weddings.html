@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weddings | Your Name</title>
+  <meta name="description" content="Honest, elegant wedding photography for modern couples." />
+
+  <!-- Optional: reuse your global site CSS if you have one -->
+  <!-- <link rel="stylesheet" href="styles.css" /> -->
+
+  <!-- Weddings page CSS -->
+  <link rel="stylesheet" href="weddings.css" />
+</head>
+
+<body>
+  <!-- Top nav -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <span class="brand-mark">YN</span>
+        <span class="brand-text">Your Name</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a class="active" href="weddings.html" aria-current="page">Weddings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Weddings hero">
+      <picture>
+        <!-- Replace with your best calm, elegant couple portrait / scene -->
+        <img
+          src="assets/weddings/01.jpg"
+          alt="Elegant wedding moment"
+          class="hero-img"
+          loading="eager"
+          decoding="async"
+        />
+      </picture>
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container hero-content">
+        <p class="hero-kicker">Weddings</p>
+        <h1 class="hero-title">Honest, elegant photography for modern couples</h1>
+        <p class="hero-subtitle">
+          Calm direction when you want it. Space to be yourselves when you don’t.
+        </p>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <div class="container intro-inner">
+        <h2 class="section-title">A quiet approach, with intention</h2>
+        <div class="prose">
+          <p>
+            I photograph weddings with a calm, unobtrusive presence — focusing on real connection,
+            beautiful light, and the atmosphere of the day.
+          </p>
+          <p>
+            The goal is simple: you stay present, and you receive images that feel true now
+            and still feel true years from now.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" aria-label="Weddings portfolio gallery">
+      <div class="container">
+
+        <!--
+          HOW TO USE THIS GALLERY:
+          - Replace / add images up to 24 by duplicating figure blocks.
+          - Choose "full", "half", or "wide" for layout variety:
+              gallery-item full  -> one image spans full width
+              gallery-item half  -> two images sit side-by-side on desktop
+              gallery-item wide  -> slightly wider feel; still single image but with extra spacing
+          - On mobile, everything becomes single column automatically.
+        -->
+
+        <div class="gallery-flow">
+
+          <!-- OPENING: 1 full, then 2 half -->
+          <figure class="gallery-item full">
+            <img src="assets/weddings/02.jpg" alt="Wedding emotional moment" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/03.jpg" alt="Wedding detail and light" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/04.jpg" alt="Couple together" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- RHYTHM -->
+          <figure class="gallery-item wide">
+            <img src="assets/weddings/05.jpg" alt="Ceremony scene" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/06.jpg" alt="Bride portrait" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/07.jpg" alt="Groom portrait" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item full">
+            <img src="assets/weddings/08.jpg" alt="Couple cinematic portrait" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/09.jpg" alt="Guests laughter" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/10.jpg" alt="Hands and quiet moment" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item full">
+            <img src="assets/weddings/11.jpg" alt="Venue architecture and light" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/12.jpg" alt="Couple walking" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/13.jpg" alt="Reception mood" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- BREATH (extra space) -->
+          <figure class="gallery-item full breath">
+            <img src="assets/weddings/14.jpg" alt="Quiet scene at golden hour" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- CLOSING -->
+          <figure class="gallery-item half">
+            <img src="assets/weddings/15.jpg" alt="Embrace" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item half">
+            <img src="assets/weddings/16.jpg" alt="A toast" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item wide">
+            <img src="assets/weddings/17.jpg" alt="Landscape context" loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="gallery-item full">
+            <img src="assets/weddings/18.jpg" alt="Night portrait or closing moment" loading="lazy" decoding="async">
+          </figure>
+
+          <!-- OPTIONAL: add up to 24 images by continuing the pattern
+          <figure class="gallery-item half"><img src="assets/weddings/19.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item half"><img src="assets/weddings/20.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item full"><img src="assets/weddings/21.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item half"><img src="assets/weddings/22.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item half"><img src="assets/weddings/23.jpg" alt="" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item wide"><img src="assets/weddings/24.jpg" alt="" loading="lazy" decoding="async"></figure>
+          -->
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPECTATIONS -->
+    <section class="expectations">
+      <div class="container expectations-inner">
+        <h2 class="section-title">What you can expect</h2>
+        <ul class="bullets">
+          <li>Calm, clear guidance when needed</li>
+          <li>Space to be yourselves</li>
+          <li>Thoughtful composition and cinematic light</li>
+          <li>A complete story, edited with consistency</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-inner">
+        <h2 class="cta-title">If this feels like you, let’s talk.</h2>
+        <p class="cta-text">
+          Share your date, location, and what you’re planning — I’ll reply with availability and next steps.
+        </p>
+        <a class="cta-button" href="contact.html">Get in touch</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-small">© <span id="year"></span> Your Name. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="weddings.html">Weddings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const btn = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+
+    btn?.addEventListener('click', () => {
+      const isOpen = links.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  </script>
+</body>
+</html>
