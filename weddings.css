@@ -92,14 +92,14 @@
    ========================================================= */
 
 .w-gallery {
-  padding: 140px 0 180px;
+  padding: 120px 0 160px;
 }
 
 /* Base row */
 .w-row {
   display: grid;
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: 36px;
+  margin-bottom: 52px;
 }
 
 /* Row types */
