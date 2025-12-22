@@ -84,14 +84,14 @@
 }
 
 /* =====================================
-   COOL EDITORIAL ASYMMETRIC GRID
+   EDITORIAL ASYMMETRIC GALLERY (FINAL)
    ===================================== */
 
 .w-gallery {
   padding: 100px 0 140px;
 }
 
-/* Base grid */
+/* GRID SYSTEM */
 .w-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -99,23 +99,24 @@
   grid-auto-flow: dense;
 }
 
-/* Base image frame */
+/* BASE ITEM — SMALL BY DEFAULT */
 .w-grid figure {
   margin: 0;
   position: relative;
   overflow: hidden;
   border-radius: 14px;
   background: #eee;
+  grid-column: span 1;
 }
 
-/* Aspect ratio control */
+/* ASPECT RATIO CONTROL */
 .w-grid figure::before {
   content: "";
   display: block;
-  padding-top: 75%;
+  padding-top: 75%; /* 4:3 */
 }
 
-/* Image fill */
+/* IMAGE FILL */
 .w-grid img {
   position: absolute;
   inset: 0;
@@ -125,31 +126,33 @@
   transition: transform 0.6s ease;
 }
 
-/* Interaction */
+/* SUBTLE TACTILE FEEL */
 .w-grid figure:hover img {
   transform: scale(1.04);
 }
 
-/* Variations */
-.w-grid figure {
-  grid-column: span 1;
-}
+/* ======================
+   SIZE VARIATIONS
+   ====================== */
 
+/* Medium emphasis */
 .w-grid figure.wide {
-  grid-column: span 4;
+  grid-column: span 3;
 }
 
+/* Strong emphasis */
 .w-grid figure.large {
   grid-column: span 4;
 }
 
+.w-grid figure.large::before {
+  padding-top: 56.25%; /* 16:9 */
+}
+
+/* Vertical tension */
 .w-grid figure.tall {
   grid-column: span 2;
   grid-row: span 2;
-}
-
-.w-grid figure.large::before {
-  padding-top: 56%;
 }
 
 .w-grid figure.tall::before {
@@ -157,7 +160,7 @@
 }
 
 /* ======================
-   TABLET
+   TABLET (≤ 1024px)
    ====================== */
 @media (max-width: 1024px) {
   .w-grid {
@@ -166,17 +169,25 @@
   }
 
   .w-grid figure {
+    grid-column: span 1;
+  }
+
+  .w-grid figure.wide {
     grid-column: span 2;
   }
 
-  .w-grid figure.wide,
   .w-grid figure.large {
     grid-column: span 4;
+  }
+
+  .w-grid figure.tall {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 }
 
 /* ======================
-   MOBILE (IMPORTANT)
+   MOBILE (≤ 640px)
    ====================== */
 @media (max-width: 640px) {
   .w-grid {
@@ -196,6 +207,10 @@
   .w-grid figure.tall {
     grid-column: span 1;
     grid-row: span 2;
+  }
+
+  .w-grid figure::before {
+    padding-top: 70%;
   }
 }
 
