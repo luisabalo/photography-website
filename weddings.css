@@ -66,33 +66,34 @@
   opacity: 0.9;
 }
 
-/* =========================================================
-   INTRO
-   ========================================================= */
+/* INTRO */
 
 .w-intro {
-  padding: 120px 0 60px;
+  padding: 96px 0 48px;
 }
 
 .w-section-title {
   font-size: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .w-intro p {
   max-width: 640px;
   font-size: 15px;
   opacity: 0.85;
+  margin: 0 0 14px;
 }
 
-/* =========================================================
-   GALLERY — ROW-BASED, IMAGE-RESPECTFUL
-   ========================================================= */
+.w-intro p:last-child {
+  margin-bottom: 0;
+}
+
+/* GALLERY */
 
 .w-gallery {
-  padding: 100px 0 60px;
+  padding: 80px 0 120px;
 }
 
 /* Base row */
