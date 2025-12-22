@@ -132,7 +132,7 @@
 
 /* Variations */
 .w-grid figure {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 .w-grid figure.wide {
