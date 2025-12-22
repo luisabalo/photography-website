@@ -8,7 +8,9 @@
   padding: 0 clamp(18px, 3vw, 32px);
 }
 
-/* HERO */
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .w-hero {
   position: relative;
@@ -64,7 +66,9 @@
   opacity: 0.9;
 }
 
-/* INTRO */
+/* =========================================================
+   INTRO
+   ========================================================= */
 
 .w-intro {
   padding: 120px 0 80px;
@@ -83,32 +87,50 @@
   opacity: 0.85;
 }
 
-/* GALLERY */
+/* =========================================================
+   GALLERY — ROW-BASED, IMAGE-RESPECTFUL
+   ========================================================= */
 
 .w-gallery {
   padding: 140px 0 180px;
 }
 
-.w-grid {
+/* Base row */
+.w-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
   gap: 40px;
+  margin-bottom: 60px;
 }
 
-.w-grid figure {
+/* Row types */
+.w-row.triple {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.w-row.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.w-row.single {
+  grid-template-columns: 1fr;
+}
+
+/* Image frame (sharp edges) */
+.w-row figure {
   margin: 0;
   position: relative;
   overflow: hidden;
   background: #f0f0f0;
 }
 
-.w-grid figure::before {
+/* Default: Sony A7 III ratio ≈ 3:2 */
+.w-row figure::before {
   content: "";
   display: block;
-  padding-top: 66%;
+  padding-top: 66.66%;
 }
 
-.w-grid img {
+.w-row img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -116,54 +138,56 @@
   object-fit: cover;
 }
 
-/* Wider images */
-.w-grid .wide {
-  grid-column: span 3;
+/* Explicit vertical images (MAX 3 total) */
+.w-row figure.vertical::before {
+  padding-top: 125%;
 }
 
-/* TABLET */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 1024px) {
-  .w-grid {
-    grid-template-columns: repeat(4, 1fr);
+  .w-row {
     gap: 32px;
+    margin-bottom: 48px;
   }
 
-  .w-grid figure {
-    grid-column: span 2;
-  }
-
-  .w-grid .wide {
-    grid-column: span 4;
+  /* Triple becomes 2 + 1 (still big) */
+  .w-row.triple {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* PHONE */
+/* =========================================================
+   PHONE
+   ========================================================= */
 
 @media (max-width: 640px) {
   .w-gallery {
     padding: 100px 0 140px;
   }
 
-  .w-grid {
+  .w-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 26px;
+    gap: 24px;
+    margin-bottom: 40px;
   }
 
-  .w-grid figure {
-    grid-column: span 1;
+  /* Single rows stay single */
+  .w-row.single {
+    grid-template-columns: 1fr;
   }
 
-  .w-grid .wide {
+  /* Vertical images go full width on phone */
+  .w-row figure.vertical {
     grid-column: 1 / -1;
-  }
-
-  .w-grid figure::before {
-    padding-top: 70%;
   }
 }
 
-/* CTA */
+/* =========================================================
+   CTA
+   ========================================================= */
 
 .w-cta {
   text-align: center;
@@ -185,4 +209,13 @@
   display: inline-block;
   border: 1px solid #000;
   padding: 10px 22px;
+}
+
+/* =========================================================
+   SAFETY: FORCE SHARP EDGES
+   ========================================================= */
+
+.w-gallery figure,
+.w-gallery img {
+  border-radius: 0 !important;
 }
